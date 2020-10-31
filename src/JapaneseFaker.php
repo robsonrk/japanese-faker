@@ -76,9 +76,9 @@ class JapaneseFaker
     {
         $this->restrictType($type);
         
-        $first = $this->first_name['type'];
-        $last = $this->last_name['type'];
-        return "$first $last";
+        $first = $this->first_name[$type];
+        $last = $this->last_name[$type];
+        return "$last $first";
     }
 
     public function restrictType(string $type)
