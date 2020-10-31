@@ -86,12 +86,12 @@ class JapaneseFaker
     public function restrictType(string $type)
     {
         if (!$this->isAvailableType($type)) {
-            throw new Exception("Type is not available", 1);
+            throw new Exception("The type '$type' is not available, available types: ". implode(',', self::AVAILABLE_TYPES) , 1);
         }
     }
 
     public function isAvailableType(string $type)
     {
-        return (!in_array($type, self::AVAILABLE_TYPES));
+        return (in_array($type, self::AVAILABLE_TYPES));
     }
 }
