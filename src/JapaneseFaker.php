@@ -7,9 +7,14 @@ use Exception;
 class JapaneseFaker
 {
     private const AVAILABLE_TYPES = ['kanji', 'kana', 'rome'];
+    private $first_name;
+    private $last_name;
+    public $address;
+
     public function __construct()
     {
         $this->setName();
+        $this->address = new Address;
     }
 
     public function setName()
@@ -17,9 +22,6 @@ class JapaneseFaker
         $this->first_name = $this->first_names[rand(0, count($this->first_names) - 1)];
         $this->last_name = $this->last_names[rand(0, count($this->last_names) - 1)];
     }
-
-    private $first_name;
-    private $last_name;
 
     private $first_names = [
         [
