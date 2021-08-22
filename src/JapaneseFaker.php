@@ -8,5 +8,6 @@ class JapaneseFaker
     {
         $this->address = new Address;
         $this->person = new Person;
+        $this->company = new Company;
     }
 }
